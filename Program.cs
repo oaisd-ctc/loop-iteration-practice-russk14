@@ -24,15 +24,38 @@ public class Program
         WriteEvensThrough100();
 
         FindSum(5);
-        FindSum()
+        FindSum(1);
+        FindSum(-3);
+        FindSum(100);
+        
+        FindSumOfEvenNumbers(10);
+        FindSumOfEvenNumbers(-5);
+        FindSumOfEvenNumbers(2);
+        FindSumOfEvenNumbers(0);
+        FindSumOfEvenNumbers(1);
+        FindSumOfEvenNumbers(25);
+        FindSumOfEvenNumbers(-25);
+        //
 
+        FindSumOfOddNumbers(10);
+        FindSumOfOddNumbers(-5);
+        FindSumOfOddNumbers(1);
+        FindSumOfOddNumbers(2);
+        FindSumOfOddNumbers(25);
+        FindSumOfOddNumbers(-25);
+
+        OutputRightTriangle(4);
+        OutputRightTriangle(6);
+        OutputRightTriangle(-4);
+        OutputRightTriangle(-6);
+        OutputRightTriangle(0);
     }
 
     public static void Write1ThroughN_While(int n){
         int x = 0;
 
         if (n <= 0){
-            Console.WriteLine($"{n} is out of range.");
+            OutofRangeMessage(n);
             return; 
             // Return used, as the Console.WriteLine() later on will format everything weird. End the function here.
         }
@@ -49,7 +72,7 @@ public class Program
     public static void Write1ThroughN_For(int n){
         
         if (n <= 0){
-            Console.WriteLine($"{n} is out of range.");
+            OutofRangeMessage(n);
             return;
         }
 
@@ -63,7 +86,7 @@ public class Program
     public static void WriteNThrough1_While(int n){
         int x = n;
         if (n <= 0){
-            Console.WriteLine($"{n} is out of range.");
+            OutofRangeMessage(n);
             return;
         }
         while (x > 0){
@@ -78,7 +101,7 @@ public class Program
     public static void WriteNThrough1_For(int n){
         
         if (n <= 0){
-            Console.WriteLine($"{n} is out of range.");
+            OutofRangeMessage(n);
             return;
         }
 
@@ -137,7 +160,7 @@ public class Program
         int sum = 0;
 
         if (n > 0){
-            for (int i = 1; i < n; i++){
+            for (int i = 1; i <= n; i++){
                 if (i % 2 == 1){
                     sum += i;
                 }
@@ -154,7 +177,7 @@ public class Program
     }
 
     public static void OutputRightTriangle(int _base){
-        if (_base >= 0){
+        if (_base > 0){
             for(int i = 1; i <= _base; i++){
                 Console.WriteLine("");
                 for(int u = 0; u < i; u++){
@@ -163,15 +186,21 @@ public class Program
             }
             Console.WriteLine();
 
-        } else { // if base is negative
+        } else if (_base < 0) { // if base is negative
             for(int i = _base; i <= 0; i++){
                 Console.WriteLine("");
                 for(int u = i; u < 0; u++){
                     Console.Write("▲");
                 }
             }
+        } else {
+            OutofRangeMessage(_base);
         }
 
+    }
+
+    public static void OutofRangeMessage(int n){
+        Console.WriteLine($"{n} is out of range.");
     }
 
 }
