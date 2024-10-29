@@ -5,12 +5,26 @@ using System;
 public class Program
 {
     public static void Main(string[] args){
-        FindSumOfOddNumbers(10);
-        FindSumOfOddNumbers(-5);
-        FindSumOfOddNumbers(-25);
+        Write1ThroughN_While(-1);
+        Write1ThroughN_While(5);
+        Write1ThroughN_While(0);
+        
+        Write1ThroughN_For(-1);
+        Write1ThroughN_For(5);
+        Write1ThroughN_For(0);
 
-        OutputRightTriangle(5);
-        OutputRightTriangle(-5);
+        WriteNThrough1_While(-1);
+        WriteNThrough1_While(5);
+        WriteNThrough1_While(0);
+
+        WriteNThrough1_For(-1);
+        WriteNThrough1_For(5);
+        WriteNThrough1_For(0);
+
+        WriteEvensThrough100();
+
+        FindSum(5);
+        FindSum()
 
     }
 
